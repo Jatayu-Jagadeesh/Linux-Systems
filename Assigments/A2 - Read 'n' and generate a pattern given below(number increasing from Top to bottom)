@@ -1,0 +1,24 @@
+#!/bin/bash
+
+<<Doc
+Name: Jagadeesh
+Date: 16-09-2022
+Description: Pattern 2
+Sample i/p: 4
+Sample o/p: 1
+            2 3
+            4 5 6
+            7 8 9 10
+Doc
+
+read -p "Enter the number" num  # Enter number to coloum values
+count=0
+for i in `seq $num`                 # First for loop rows
+do
+    for j in `seq $i`               # Second for loop coloum
+    do
+	    count=$((count+1))          # Condition count 
+	    echo -n "$count "           # In the same line prints count
+    done                            # Inner loop is completed
+    echo
+done

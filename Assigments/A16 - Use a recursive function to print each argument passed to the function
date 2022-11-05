@@ -1,0 +1,33 @@
+<<Documentation
+Name:Jagadeesh
+Date:21/09/2022
+Descrption: Use a Recursive function to print each Argument  Passed to the function
+Sample I/P: How are you? I am Fine
+Sample o/P: How
+            are
+            you?
+            I
+            am
+            fine
+Documentation
+
+#/bin/bash
+if [ $# -ne 0 ]                                                                 #....> when count not equal to zero
+then
+    recursion()
+    {
+        arr=($@)                                                                #....> Prints all the  elements
+        echo $1
+        if [ $# -ge 1 ]                                                         #....> when array elements equal to zero
+        then
+            arr=(${arr[@]:1})                                                   #....> Prints arry from 1 elements
+            recursion ${arr[@]}                                                 #....> Prints the array elements
+        else
+            return 0
+        fi
+    }
+    recursion $@                                                                #....> Prints the  elements in array
+else
+    echo  Error : Pass the arguments through command line.
+
+fi

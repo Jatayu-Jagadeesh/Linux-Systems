@@ -1,0 +1,33 @@
+#!/bin/bash
+
+<<Doc
+Name:Jagadeesh
+Date: 28-09-2022
+Description:For each directory in the $PATH, display the number of executable files in that directory.
+Sample i/p: ./executable_path.sh
+Sample o/p:
+            current dir: /usr/local/games
+            current count: 0
+            Total - 2445
+Doc
+
+Total=0                                                                         # initialize the count to 0
+for i in `echo $PATH | tr ":" " "`                                              # replacing the : to space using tr
+do
+    count=0                                                                     # initializing the local counter to 0
+	if [ -d $i ]                                                                # check weather directory or not
+	then
+		cd $i                                                                   # changing the directory 
+		echo "Current dir:"`pwd`                                                # print the current directory
+	    for j in `ls`                                                           # contant of the pwd
+	    do
+            if [ -x $j ]                                                        # check for executable files
+            then
+    	    count=$(($count+1))                                                 # increment the count 
+    	    fi
+        done
+    fi
+    echo "current count:$count"                                                 # print error   
+Total=$(($Total+$count))                                                        # assigning the count to total and incrementing the total
+done
+	echo  "Total=$Total"                                                        # printing the total

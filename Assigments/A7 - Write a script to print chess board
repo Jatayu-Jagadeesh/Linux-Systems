@@ -1,0 +1,23 @@
+#!/bin/bash
+
+<<Doc
+Name:Jagadeesh
+Date:21-09-2022
+Description: print chess bord
+Sample i/p: 8
+Sample o/p: 8
+Doc
+
+for i in `seq 8`			        	      # enter i				
+do
+    for j in `seq 8`		    		      # enter j
+    do
+	if [ $(($(($i + $j)) % 2)) -eq 0 ]	# if condition 
+	then
+	   echo -e -n "\e[47m" " "	    	  # white
+	else
+	   echo -e -n "\e[40m" " "	    	  # black
+	fi
+    done					
+echo -e  "\e[0m" " "				
+done		

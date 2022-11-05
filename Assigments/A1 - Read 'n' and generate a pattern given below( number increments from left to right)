@@ -1,0 +1,23 @@
+#!/bin/bash
+
+<<Doc
+Name: Jagadeesh
+Date: 20-09-2022
+Description:pattern generation
+Sample i/p:4
+Sample o/p:1
+	       1 2
+	       1 2 3
+	       1 2 3 4
+Doc
+
+read -p "Enter the number" num 		# Enter number to coloum values
+
+for row in `seq $num`			        # First for loop rows 
+do					
+    	for col in `seq $row`		    # Second for loop coloums
+	    do
+	    	echo -n "$col "  		      # In the same line prints coloum number
+	    done				                # Inner loop is completed
+    	echo 
+done

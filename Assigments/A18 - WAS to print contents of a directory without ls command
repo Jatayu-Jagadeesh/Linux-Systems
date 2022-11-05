@@ -1,0 +1,40 @@
+<<Documentation
+Name: Jagadeesh
+Date:21/09/2022
+Descrption: Write a Script that takes any number of directories as command line arguments and then lists the contents of each of these directories
+Sample I/P: ~/ECEP/
+Sample o/P: Assignment
+            Classworks
+Documentation
+#!/bin/bash
+if [ $# -ne 0 ]                                                                 # When Count not a equal to 0.
+
+then
+
+        for dir in "$@"                                                         # When all the contents are stored in dir.
+
+        do
+
+    if [ -d $dir ]                                                              # Checks for Directory
+
+    then
+
+        cd $dir                                                                 # Change Directory
+
+        echo $dir                                                               # Prints the Directory
+
+        echo *                                                                  # Prints the Contents
+
+    else
+
+    echo "Cannot acess'$1':No such file or directory"                           # Prints the error message
+
+fi
+
+done
+
+else
+
+    echo *                                                                      # Prints the error message
+
+fi

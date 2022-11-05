@@ -1,0 +1,16 @@
+<<documentation
+name:Jagadeesh
+date:19/09/2022
+discription:script to delete empty lines from a file
+sample input:file3.txt
+sample output:Empty lines are deleted
+documentation
+#!/bin/bash
+if [ $# -eq 1 ]                                                                 # Validation     
+then
+    sed -i '/^[[:blank:]]*$/d' $1                                               # sed commmand
+    echo "Empty lines are deleted"                                              # print empty lines  
+    cat $1                            
+else
+    echo "Error: Please pass the file name through command line."
+fi

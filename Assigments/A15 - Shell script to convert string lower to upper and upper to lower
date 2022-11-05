@@ -1,0 +1,36 @@
+<<Documentation
+Name:Jagadeesh
+Date:21/09/2022
+Descrption: Shell scipt to convert  string lower to upper and upper to lower
+Sample I/P: WHAT IS OS?
+Sample o/P: what is os?
+Documentation
+
+#!/bin/bash
+if [ $# -gt 0 ]                                                                     #....>If count is not equal to zero
+then
+    if [ -f $1 ]                                                                    #....>checks for file
+    then
+        if [ -s $1 ]                                                                #....>checks for contents
+        then
+            echo $1
+            echo "1. Lower to upper"
+            echo "2. Upper to Lower"
+            echo "Please select the option:"
+            read option
+            case $option in
+                1)
+                    cat $1 | tr a-z A-Z                                                   #....>converts lower to upper
+                    ;;
+                2)
+                    cat $1 | tr A-Z a-z                                                    #....>convets upper to lower
+                    ;;
+
+                esac
+            else
+                echo "Error: No contents inside the file."
+            fi
+        fi
+    else
+        echo "Error : Please pass the file name through command line."                 #....>Prints error message
+    fi

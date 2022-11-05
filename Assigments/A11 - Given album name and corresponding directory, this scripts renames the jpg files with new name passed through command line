@@ -1,0 +1,27 @@
+<<Documentation
+   Name:Jagadeesh
+   Date:24/09/2022
+   Descrption: Given Album and given name coresponding directory the scripts rename them  properly by inserting Index numbers
+   Sample I/P: day_out
+   Sample o/P: day_001.
+   Documentation
+
+#!/bin/bash
+
+if [ $# -ne 0 ]                                                                 # validation
+
+then
+    for name in *.jpg                                                           # stort the .jpg files in i
+    do
+        var=`echo "$i" | tr -cd [:digit:]`                                      # storting the numbers in var variable
+        new=$1$var.jpg                                                          # assigning the new variable and .jpg
+        mv $i $new                                                              # renaming the file name
+
+    done
+
+    echo "All .jpg files in current directory is renamed as"                    # print the message
+    echo *.jpg                                                                  # display the contants of .jpg
+else
+    echo "Error:Please pass the prefix name through command line."              # Prints the error message
+
+fi

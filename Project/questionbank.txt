@@ -1,0 +1,99 @@
+1.Who developed Linux?
+
+(A) Dennis Ritchie
+
+(B) Linus Torvalds
+
+(C) Ken Thompson
+
+(D) Prof. Andrew S. Tannenbaum
+
+2.In which year Linux was developed?
+
+(A) 1989
+
+(B) 1990
+
+(C) 1991
+
+(D) 1992
+
+3.The trial version of Linux is called
+
+(A) Alpha
+
+(B) Beta
+
+(C) Gamma
+
+(D) Stable
+
+4.SA is also known as root user or
+
+(A) Supervisor
+
+(B) Multi user
+
+(C) Single user
+
+(D) Super user
+
+5.Who is primarily responsible for the smooth functioning of the system?
+
+(A) System Advisor
+
+(B) System coordinator
+
+(C) System Manager
+
+(D) System Administrator
+
+6.Which has excellent support for older hardware?
+
+(A) Unix
+
+(B) Linux
+
+(C) Minix
+
+(D) Xenix
+
+7.What is the other name of new shell?
+
+(A) Baby shell
+
+(B) Junior shell
+
+(C) Child shell
+
+(D) Assistant shell
+
+8.In Linux hard disk partition, hda2, a stands for the ___
+
+(A) first hard drive
+
+(B) first partition
+
+(C) second partition
+
+(D) second hard drive
+
+9.Where do the users arrive after entering exit in Linux system?
+
+(A) Login screen
+
+(B) Internet
+
+(C) Logout screen
+
+(D) Login prompt
+
+10.Single dot (.) with cd refers to ___
+
+(A) Change directory
+
+(B) Created directory
+
+(C) Current directory
+
+(D) Parent directory

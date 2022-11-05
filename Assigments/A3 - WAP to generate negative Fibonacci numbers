@@ -1,0 +1,42 @@
+/*
+   Doc
+Name		: Jagadeesh.
+Date		: 14-10-2022
+Description	: write a program to generate negative Fibonacci numbers
+sample i/p	: -8, -10, -21, -13, 13
+sample o/p	: -8 - 0 1 -1 2 -3 5 -8
+              -10 - 0 1 -1 2 -3 5 -8
+              -21 - 0 1 -1 2 -3 5 -8 13 -21
+              -13 - 0 1 -1 2 -3 5 -8 13
+              13 - Invalid input
+Doc
+*/
+
+#include<stdio.h>                                                               // header file for the standard input and output
+int main()                                                                      
+{
+    
+    int num;                                                                    // declearing num variable
+    int first = 0;                                                              // declearing first to zero
+    int second = 1;                                                             // declearing second to zero
+    int next = 0;                                                               // declearing next to zero
+
+    printf("Enter a number: ");                                                 // user to enter the number
+    scanf("%d", &num);                                                          // to sstore and read user value
+
+    if (num <= 0)                                                               // to check for negative
+    {
+        while(next >= num && next <=-num)                                       // next is greater than num and next is less than num
+        {
+            printf("%d", next);                                                 // print value of next
+            first = second;                                                     // assign second value to first
+            second = next;                                                      // assign next value to first
+            next = first - second;                                              // subtracting both first and second value to the next
+        }
+    }
+    else
+    {
+        printf("Invalid input \n");                                             // print if the value is invalid
+    }
+    return 0;
+}

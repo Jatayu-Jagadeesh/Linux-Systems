@@ -1,0 +1,27 @@
+#!/bin/bash
+<<Doc
+Name:Jagadeesh
+Date: 29-09-2022
+Description: Display the longest and shortest user-names on the system
+Sample i/p: ./largest_user.sh
+Sample o/p: The longest Name is : speech-dispatcher
+            The shortest Name is :lp
+Doc
+
+arr=(`cut -d ":" -f1 /etc/passwd`)                                              # storing the usernames from the /etc/passwd directory
+short=${arr[0]}                                                                 # assigning the first name to short. It taken for reference
+long=${arr[0]}                                                                  # assigning the first name to long. It taken for reference
+for i in `seq 0 $(( ${#arr[@]} -1 ))`                                           # loop for user names
+do
+	if [ ${#arr[$i]} -gt ${#long} ]                                               # check if present name is greater than or not
+	then
+    long=${arr[$i]}                                                             # awap
+	elif [ ${#arr[$i]} -lt ${#long} ]                                             # check if present name is less than or not
+	then
+    short=${arr[$i]}                                                            # swap
+	fi
+done
+echo "longest username is $long"                                                # print longest
+echo "shortest username is $short"                                              # print shortest
+
+

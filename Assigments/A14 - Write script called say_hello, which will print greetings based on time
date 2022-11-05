@@ -1,0 +1,35 @@
+<<Doc
+Name:Jagadeesh
+Date: 28-09-2022
+Description:Write a script called say_hello, which will print greetings based on time.
+Sample i/p: When we start shell (whenever you opening new tab or terminal)
+Sample o/p: Good Morning user, Have nice day!
+            This is Thursday 08 in June of 2017 (10:44:10 AM)
+Doc
+
+hour=`date +%H`                                                                 # Talking the hours to hours varable.
+if [ $hour -ge 5 -a $hour -lt 12 ]                                              # Cheaking the time in between 5 am - 12 pm.
+then
+    wish="Good morning"
+elif [ $hour -ge 12 -a $hour -lt 14 ]                                           # Cheaking the time in between 12 pm - 2 pm. 
+then
+    wish="Good noon"
+elif [ $hour -ge 14 -a $hour -lt 17 ]                                           # Cheaking the time in between 2 pm - 5 pm.
+then
+    wish="Good afternoon"
+elif [ $hour -ge 17 -a $hour -lt 21 ]                                           # Cheaking the time in between 5 pm - 9 pm.
+then
+    wish="Good Evening"
+else
+    wish="Good night"
+fi
+
+day=`date | cut -d " " -f1`                                                     # Cutting the day in day in date command.
+date=`date | cut -d " " -f2`                                                    # Cutting the date in day in date command.
+month=`date | cut -d " " -f3`                                                   # Cutting the month in day in date command.
+year=`date | cut -d " " -f4`                                                    # Cutting the year in day in date command.
+time=`date | cut -d " " -f5`                                                    # Cutting the time in day in date command.
+user=`whoami`                                                                   # Cutting the user in day in date command.
+a=`date| cut -d " " -f6`                                                        # Cutting the am/pm in day in date command.
+echo "$wish $user, Have a nice day!"                                            # Printing the message.
+echo "This is $day $date in $month of $year ($time $a)"                         # Printing the message.

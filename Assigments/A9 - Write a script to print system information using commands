@@ -1,0 +1,70 @@
+#!/bin/bash
+<<Doc
+Name:Jagadeesh
+Date: 29-09-2022
+Description: Write a script to print system information using commands
+Sample i/p: from question
+Sample o/p: from question
+Doc
+
+opt=y                                                                           # assigning y to opt for first time to do loop
+while [ $opt = "y" ]                                                            # check for the option                                              
+do
+echo "1. Currently logged users 
+2. Your shell directory
+3. Home directory
+4. OS name & version
+5. Current working directory
+6. Number of users logged in
+7. Show all available shells in your system
+8. Hard disk information
+9. CPU information.
+10. Memory Informations
+11. File system information.
+12. Currently running process."                                                 # print the data
+read -p "Enter the choice:" op                                                  # read the option 1-12
+case $op in                                                                     # case start
+      	1)
+      	w                                                                       # currently logged users
+      	;;
+      2)
+      	echo $SHELL                                                             # your shell directory
+      	;;
+      3)
+     	~                                                                       # Home directory                
+     	;;
+      4)
+      	uname -r                                                                # OS name & version                   
+      	;;
+      5)
+      	pwd                                                                     # current working directory                                                           
+      6)
+      	who  -q                                                                 # number of users logged in                                                                                                                   
+      	;;
+      7)
+      	cat /etc/shells                                                         # show all available shells in your system                          
+      	;;
+      8)
+      	hwinfo                                                                  # Hard disk information                                
+        ;;
+      9)
+      	cat /proc/memoryinfo                                                    # CPU informations
+      	;;
+      10)
+      	cat /proc/memoryinfo                                                    # Memory informations
+      	;;  
+      11)
+      	df                                                                      # Files system information
+      	;;
+      12)
+      	ps                                                                      # currently running process
+      	;;
+      *)
+      	echo "Error : Invalid option, please enter valid option"                # print error
+  	esac                                                                        # close the case
+ 	 
+  	read -p "Do you want to continue (y/n) ?" opt                               # read the option
+done
+
+
+

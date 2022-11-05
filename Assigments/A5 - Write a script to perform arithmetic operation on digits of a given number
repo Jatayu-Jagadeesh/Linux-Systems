@@ -1,0 +1,57 @@
+<<Documentation
+Name:Jagadeesh
+Date:19/09/2022
+Descrption: Write a script to perform arithmetic operation on digits of a given number
+Sample I/P: 1234+
+Sample o/P: 10
+Documentation
+
+#!/bin/bash
+num=$1
+len=${#1}                                                                                                  #....>Counts the length of a number.
+sum=${num:0:1}  
+#....>Counts from First index value.
+if [ $# -ne 0 ]                                                                                            #....>Count not equal to 0.
+then
+    opr=${num: -1}
+    case $opr in
+        +)
+            for i in `seq 1 $(($len -2))`                                                                  # ....>Sequence  of the elements.
+            do
+                var=${num:$i:1}
+                sum=$(($sum + $var))                                                                       #....>Performes Addition
+            done
+            echo "Sum of digits = $sum"
+            ;;
+        -)
+            for i in `seq 1 $(($len - 2))`
+            do
+                var=${num:$i:1}
+                sum=$(($sum - $var))                                                                        #....>Performes Subraction
+            done
+            echo "Subtraction of digits = $sum"
+            ;;
+        x)
+            for i in `seq 1 $(($len - 2))`
+            do
+                var=${num:$i:1}
+                sum=`echo "$sum * $var" | bc`                                                                #....>Performs Multipication
+            done
+            echo "Multiplication of digits = $sum"
+            ;;
+        /)
+            for i in `seq 1 $(($len - 2))`
+            do
+                var=${num:$i:1}
+                sum=`echo "scale=2; $sum / $var" | bc                                                         ` #....>Performs d
+            done
+            echo "Division of digits = $sum"
+            ;;
+        *)
+            echo "Error:operator missing or invalid operator,please Pass operator as last digit (+,-,x,/)"  #....>Prints Error message
+            ;;
+    esac
+else
+    echo -e "Error : Please pass the arguments through CL."
+    echo -e "Usage : ./operator_dependent.sh 2345+"                                                             #....>Prints error message
+fi 

@@ -1,0 +1,55 @@
+<<Documentation
+Name: jagadeesh
+Date:21/09/2022
+Descrption: Write a Script a given number is ascending or descending order.
+Sample I/P: -a 5 4 6 2 3 8 7 1
+Sample o/P:  1 2 3 4 5 6 7 8 9
+Documentation
+#! /bin/bash
+var=($@)                                                                        #Command line argument stored in array
+len=${#var[*]}                                                                  #length of array
+arr=(${var[*]:1:$len})                                                          #The command is used for cut all variable except 1st variable
+len1=$(($len-2))
+if [ $# -gt 0 ]
+then
+    case $1 in
+        -a)
+        for i in `seq 0 $(($len-1))`
+     do
+    for j in `seq 0 $len1`
+     do
+    if [[ ${arr[$j]} -gt ${arr[$((j+1))]} ]]                                    #Checking whether the 1st number is greater than second
+     then
+    swap=${arr[j]} #Stored 1st number in swap
+        arr[$j]=${arr[$((j+1))]} #stored 2nd number in 1st
+    arr[$((j+1))]=$swap #Stored 2nd number in swap
+     fi
+     done
+    done
+     echo "Ascending order of array is ${arr[*]}"                               #print array in ascending order
+     ;;
+     -d)
+    for i in `seq 0 $(($len-1))`
+    do
+     for j in `seq 0 $len1`
+     do
+     if [[ ${arr[$j]} -lt ${arr[$((j+1))]} ]]                                   #Checking whether the 1st number is greater than second
+     then
+     swap=${arr[j]}                                                             #stored 1st number in swap
+     arr[$j]=${arr[$((j+1))]}                                                   #stored 2nd number in 1st
+     arr[$((j+1))]=$swap                                                        #stored 2nd number in swap
+     fi
+     done
+    done
+    echo "Descending order of array is ${arr[*]}"                               #print array in descending order
+    ;;
+    *)
+    echo "Error : Please pass the choice."
+     echo "Usage : ./sorting -a/-d 4 23 5 6 3
+    "
+     ;;
+    esac
+else
+echo "Error : Please pass the argument through command line."
+echo "Usage : ./sorting -a/-d 4 23 5 6 3"
+fi

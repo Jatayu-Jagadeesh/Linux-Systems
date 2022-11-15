@@ -1,0 +1,25 @@
+/*
+Name         : Jagadeesh
+Date         : 02 Nov 2022
+Description  : To implement your own is x digit() function
+Sample input : Any character
+Sample output: if it belong to specified rang it will be return 1 else 0
+*/            
+#include<stdio.h>                                                               // header files for standard input and output 
+
+int is_xdigit(int ch)                                                           // defination of function
+{                                                                               // starting point of the block
+    return (ch >= 'A' && ch <= 'F' || ch <= '9' && ch >= '0' || ch <= 'f' && ch >= 'a' ? 1 : 0);  // return 1 if it is in range else returns 0
+}
+int main()
+{
+    char ch,ret;                                                                // declaring variables
+    printf("Enter a character: ");
+    scanf("%c", &ch);                                                           // reading the character
+
+    ret = is_xdigit(ch);                                                        // calling function
+
+    ret == 1 ? printf("Entered character is an hexadecimal digit\n") : printf("Entered character is not an hexadecimal digit\n");
+
+    return 0;                                                                   // printing the sentence based on the return value
+}                                                                               // ending point of the block

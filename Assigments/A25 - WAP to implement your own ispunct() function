@@ -1,0 +1,27 @@
+/*
+Name           :Jagadeesh
+Date           :5 nov 2022
+Description    :write a program to implement ispunt() function
+sample input   :Enter the character: a
+                Enter the character:$
+sample output  :Entered character is not punctuation character
+                Entered character is punctuation character
+
+
+*/
+#include<stdio.h>                                                               // header files for standard input and output
+int my_ispunct(int ch)                                                          //defination of my_ispunct() function
+{                                                                               // starting point of the block
+    return (ch >= 33 && ch <= 47 || ch >= 58 && ch <= 64 || ch>=91 && ch<=96 || ch >= 123 && ch<=126 ? 1 : 0);     //condition to check it is in range
+}
+int main()
+{
+    char ch;                                                                    //declaration of variables
+    int ret;
+    printf("Enter the character:");
+    scanf("%c",&ch);                                                            //reading the character
+    ret = my_ispunct(ch);                                                       //calling the function and stores the return value in variable
+    ret == 1 ?printf("Entered character is punctuation character\n"):printf("Entered character is not punctuation character\n");
+    return 0;                                                                   //prints approprate message based on the return value
+}                                                                               // ending point of the block
+

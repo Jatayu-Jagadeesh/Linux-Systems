@@ -1,0 +1,43 @@
+           
+/*
+Name           : Jagadeesh
+Date           : 11 Nov 2022
+Description    : Program to print 2nd largest element in array
+sample input   : Array element from user
+sample output  : second_largest element of the array
+*/
+
+#include<stdio.h>                                                               // header file for standard input and output
+int second_largest(int arr[],int size)                                          // defination of the second_largest() function
+{                                                                               // starting of the block
+    int first,i,second,third;                                                   // declaring variables
+    for(i = 0 ; i < size ; i++)                                                 // loop to find largest and smallest
+    {
+	    if(arr[i] > first)                                                      // checking first element with all elements
+	{
+	    first = arr[i];                                                         // assigning arr[0] to first in the beginning
+	}
+}
+    for(i = 0 ; i < size ; i++)                                                 // loop to find second largest
+    {
+	    if(arr[i] < first && arr[i] > second)                                   // finding second_largest element
+	    {
+	        second = arr[i];
+	    }
+    }
+    return second;
+}
+int main()
+{
+    int size,first,res,i,second;
+    printf("Enter the size of Array: ");                                        // user to enter the size of array
+    scanf("%d",&size);                                                          // reading size of array
+    int arr[size];
+    printf("Enter the elements into the array: ");                              // user to enter the values
+    for(i = 0 ; i < size ; i++)                                                 // loop to assign value to array
+    {
+	scanf("%d",&arr[i]);                                                        // reading the elements
+    }
+    res=second_largest(arr,size);
+    printf("Second largest element of the array is %d\n",res);                  // function call and printing second_largest
+}                                                                               // end of the block

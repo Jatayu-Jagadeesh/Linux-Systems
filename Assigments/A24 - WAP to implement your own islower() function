@@ -1,0 +1,24 @@
+/*
+Name           :Jagadeesh
+Date           :4 nov 2022
+Description    :write a program to implement own islower() function
+sample input   :Any character from keyboard
+sample output  :if it is in specified range given in program return 1 else 0 and prints appropriate message
+*/
+#include<stdio.h>                                                               // header files for standard input and output
+int my_islower(int ch)                                                          //defination of my_islower function
+{                                                                               // starting point of the block
+    return (ch >= 'a' && ch <= 'z' ? 1 :0);                                     //returns 1 if it is in given range else returns 0
+}
+int main()
+{
+    char ch;                                                                    //declaring variables
+    int ret;
+    printf("Enter a character: ");                                              //reading the character
+    scanf("%c",&ch);
+
+    ret = my_islower(ch);                                                       //calling the my_islower function
+    ret == 1 ? printf("Entered character is lower case alphabet\n") : printf("Entered character is not lower case alphabet\n");
+    return 0;                                                                   //prints apporprate message based on return value
+}                                                                               // ending point of the block
+
